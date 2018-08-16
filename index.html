@@ -29,8 +29,6 @@
     <script type="text/javascript">
 
     var animals = [];
-    //console.log(animalsArray);
-    //var animalInput = $("#animal-input").val().trim();
 
     function displayAnimalGif() {
         var animal = $(this).attr("data-name");
@@ -53,10 +51,8 @@
         //console.log(rating);
     animalDiv.append(pOne);
     var gifURLStill = response.data.images.fixed_height_still;
-    //var gifURLMove = response.data.images.original;
     //create element to hold gif
     var gif = $("<img>").attr("src", gifURLStill);
-    //var gifMove = $("<img>").attr("src", gifURLMove);
     
     // Appending the image
     animalDiv.append(gif);
@@ -73,24 +69,10 @@
             a.addClass("animal-btn");
             a.attr("data-name", animals[i]);
             a.text(animals[i]);
-            //animalsArray.push(animal);
             $("#buttons-view").append(a);
             }
     }
 
-    /* function addSearchTerm(event) {
-        event.preventDefault();
-        var searchTerm = $("#animal-input").val().trim();
-        if(searchTerm) {
-        animalsArray.push(searchTerm);
-        renderButtons();
-    }
-    $("#searchTerm").val("");
-       animalsArray.push(animal);
-        renderButtons(); */
-      
-
-      //$(document).ready(displayAnimalGif);
       $("#add-animal").on("click", function(event) {
           event.preventDefault();
           var animal = $("#animal-input").val().trim();        
